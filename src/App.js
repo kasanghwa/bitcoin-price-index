@@ -98,11 +98,11 @@ class App extends Component {
                 </option>
               ))}
             </select>
-            {this.state.currency !== "PHP" && (
+            {this.state.currency !== "KRW" && (
               <div>
                 <a
                   className="link"
-                  onClick={() => this.setCurrency("PHP")}
+                  onClick={() => this.setCurrency("KRW")}
                   style={{color: "black", fontSize: 16, fontFamily: "Bungee"}}
                 >
                   {" "}
@@ -112,7 +112,7 @@ class App extends Component {
             )}
           </div>
 
-          <div style={{marginTop: 10}}>
+          <div style={{marginTop: 10, width: "75%"}}>
             <Line data={this.formatChartData()} height={250} />
           </div>
         </div>
