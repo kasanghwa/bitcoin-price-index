@@ -10,8 +10,13 @@ const Header = (props) => (
       <span className="subheader">
         {" "}
         Powered by{" "}
-        <a className="link" href="https://www.coindesk.com/price/">
-          CoinDesk
+        <a
+          className="link"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://cryptocompare.com"
+        >
+          cryptocompare.com
         </a>
         .{" "}
       </span>

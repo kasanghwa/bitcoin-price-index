@@ -141,7 +141,7 @@ class App extends Component {
     if (this.state.historicalData) {
       return (
         <div className="app">
-          <Header title="BITCOIN PRICE INDEX" />
+          <Header title="CRYPTO PRICE INDEX" />
 
           <div className="select-container">
             <span style={{fontSize: 18, fontFamily: "Bungee"}}>
