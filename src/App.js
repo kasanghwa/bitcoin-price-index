@@ -70,6 +70,23 @@ class App extends Component {
     }
   }
 
+  options() {
+    return {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+              userCallback: function (value, index, values) {
+                return value.toLocaleString(); // this is all we need
+              },
+            },
+          },
+        ],
+      },
+    };
+  }
+
   formatChartData() {
     try {
       const {bpi} = this.state.historicalData;
@@ -99,7 +116,7 @@ class App extends Component {
             pointHoverBackgroundColor: "rgba(75,192,192,1)",
             pointHoverBorderColor: "rgba(220,220,220,1)",
             pointHoverBorderWidth: 2,
-            pointRadius: 1,
+            pointRadius: 0,
             pointHitRadius: 10,
             data: values,
           },
@@ -157,7 +174,11 @@ class App extends Component {
           </div>
 
           <div style={{marginTop: 10}}>
-            <Line data={this.formatChartData()} />
+            <Line
+              data={this.formatChartData()}
+              options={this.options()}
+              height={100}
+            />
           </div>
         </div>
       );
