@@ -8,6 +8,7 @@ import currencies from "./supported-currencies.json";
 
 console.log(currencies);
 
+const DEFAULT_CURRENCY = "USD";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +19,8 @@ class App extends Component {
 
     this.state = {
       historicalData: null,
-      currency: "KRW",
-      baseUrl: "https://api.coindesk.com/",
+      currency: DEFAULT_CURRENCY,
+      baseUrl: "https://api.coindesk.com",
     };
     this.onCurrencySelect = this.onCurrencySelect.bind(this);
   }
@@ -31,7 +32,7 @@ class App extends Component {
   getBitcoinData() {
     const {baseUrl, currency} = this.state;
 
-    fetch(`${baseUrl}v1/bpi/historical/close.json?currency=${currency}`)
+    fetch(`${baseUrl}/v1/bpi/historical/close.json?currency=${currency}`)
       .then((response) => response.json())
       .then((historicalData) => this.setState({historicalData}))
       .catch((e) => e);
@@ -98,11 +99,11 @@ class App extends Component {
                 </option>
               ))}
             </select>
-            {this.state.currency !== "KRW" && (
+            {this.state.currency !== DEFAULT_CURRENCY && (
               <div>
                 <a
                   className="link"
-                  onClick={() => this.setCurrency("KRW")}
+                  onClick={() => this.setCurrency(DEFAULT_CURRENCY)}
                   style={{color: "black", fontSize: 16, fontFamily: "Bungee"}}
                 >
                   {" "}
@@ -113,7 +114,7 @@ class App extends Component {
           </div>
 
           <div style={{marginTop: 10}}>
-            <Line data={this.formatChartData()} height={250} />
+            <Line data={this.formatChartData()} />
           </div>
         </div>
       );
