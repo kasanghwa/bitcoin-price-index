@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import "./App.css";
 import _ from "lodash";
 import {Line, Chart} from "react-chartjs-2";
-// import moment from f"moment";
 import currencies from "./supported-currencies.json";
 
 console.log(currencies);
@@ -31,43 +30,24 @@ class App extends Component {
 
   getBitcoinData() {
     const {currency} = this.state;
-
-    if (false) {
-      fetch(
-        `https://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`
-      )
-        .then((r) => r.json())
-        .then((historicalData) => {
-          console.log(historicalData);
-          this.setState({historicalData});
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    } else {
-      fetch(
-        `https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=${currency}&limit=1000`
-      )
-        .then((r) => r.json())
-        .then((d) => {
-          console.log(d.Data.Data);
-          const r = {};
-          for (const x of d.Data.Data) {
-            r[new Date(1000 * x.time).toISOString().substring(0, 10)] = x.close;
-            // const d = new Date(1000 * x.time);
-            // const d_ = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-            // r[d_] = x.close;
-          }
-          return {bpi: r};
-        })
-        .then((historicalData) => {
-          console.log(historicalData);
-          this.setState({historicalData});
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
+    fetch(
+      `https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=${currency}&limit=1000`
+    )
+      .then((r) => r.json())
+      .then((d) => {
+        console.log(d.Data.Data);
+        const r = {};
+        for (const x of d.Data.Data)
+          r[new Date(1000 * x.time).toISOString().substring(0, 10)] = x.close;
+        return {bpi: r};
+      })
+      .then((historicalData) => {
+        console.log(historicalData);
+        this.setState({historicalData});
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }
 
   options() {
