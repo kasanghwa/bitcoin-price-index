@@ -18,7 +18,7 @@ class App extends Component {
 
     this.state = {
       historicalData: null,
-      currency: "PHP",
+      currency: "KRW",
       baseUrl: "https://api.coindesk.com/",
     };
     this.onCurrencySelect = this.onCurrencySelect.bind(this);
