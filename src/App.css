@@ -12,17 +12,17 @@ span.bungee {
 }
 
 .app {
-  max-width: 75%;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center;
 }
 
 .header {
-  font-size: 32px;
+  font-size: 20px;
   font-family: "Bungee", cursive;
 }
 .subheader {
-  font-size: 20px;
+  font-size: 14px;
   font-family: "Bungee", cursive;
 }
 
@@ -37,7 +37,7 @@ a.link:hover {
 }
 
 .select-container select {
-  padding: 10px;
+  padding: 5px;
   border: none;
   box-shadow: none;
   background: transparent;
@@ -46,7 +46,7 @@ a.link:hover {
   font-family: "Bungee", cursive;
   cursor: pointer;
   color: #ff1769;
-  font-size: 18px;
+  font-size: 14px;
   max-width: 210px;
   white-space: nowrap;
   text-overflow: ellipsis;
