@@ -1,4 +1,5 @@
 [
+  {"currency": "BTC", "country": "Bitcoin"},
   {"currency": "BRL", "country": "Brazilian Real"},
   {"currency": "GBP", "country": "British Pound Sterling"},
   {"currency": "CNY", "country": "Chinese Yuan"},
