@@ -16,7 +16,7 @@ const Header = (props) => (
           target="_blank"
           href="https://cryptocompare.com"
         >
-          cryptocompare.com
+          CRYPTOCOMPARE
         </a>
         .{" "}
       </span>
