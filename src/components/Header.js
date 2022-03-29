@@ -7,7 +7,7 @@ const Header = props => (
     </div>
 
     <div className="subheader-body">
-      <span className="subheader"> Powered by <a className="link" target="_blank" href="https://www.coindesk.com/price/">CoinDesk</a>. </span>
+      <span className="subheader"> Powered by <a className="link" href="https://www.coindesk.com/price/">CoinDesk</a>. </span>
     </div>
   </header>
 )

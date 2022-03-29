@@ -92,7 +92,7 @@ class App extends Component {
             </select>
             {
               this.state.currency !== 'PHP' && (<div>
-                <a href="#" className="link" onClick={() => this.setCurrency('PHP')} style={{color: "black", fontSize: 16, fontFamily: 'Bungee'}}> [CLICK HERE TO RESET] </a>
+                <a className="link" onClick={() => this.setCurrency('PHP')} style={{color: "black", fontSize: 16, fontFamily: 'Bungee'}}> [CLICK HERE TO RESET] </a>
               </div>)
             }
           </div>
