@@ -112,7 +112,7 @@ class App extends Component {
             )}
           </div>
 
-          <div style={{marginTop: 10, width: "75%"}}>
+          <div style={{marginTop: 10}}>
             <Line data={this.formatChartData()} height={250} />
           </div>
         </div>
